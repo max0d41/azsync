@@ -51,7 +51,7 @@ def main(args):
             while True:
                 sleep(stats_interval)
                 for name, obj in workers.iteritems():
-                    print name, obj.get_server_stats()
+                    print name, '-', obj.get_server_stats()
     except KeyboardInterrupt:
         pass
 

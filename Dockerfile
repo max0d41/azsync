@@ -4,6 +4,5 @@ RUN apk add --update python libstdc++ python-dev py-setuptools ca-certificates b
     mkdir /azsync/azsync && touch /azsync/azsync/__init__.py && \
     cd azsync && python setup.py develop -v && rm -rf /azsync && \
     apk del --purge python-dev py-setuptools ca-certificates build-base && rm -rf /var/cache/apk/*
-COPY azsync/__main__.py azsync/__init__.py azsync/test.py /azsync/
-ENTRYPOINT python -m azsync
-CMD --all
+COPY azsync/* /azsync/
+CMD python -m azsync --all --stats-interval=60
