@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.7
 COPY setup.py /azsync/
 RUN apk add --update python libstdc++ python-dev py-setuptools ca-certificates build-base && \
     mkdir /azsync/azsync && touch /azsync/azsync/__init__.py && \
